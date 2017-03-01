@@ -13,6 +13,11 @@ namespace Tomaszkiewicz.BotFramework.Tools
             _provider = provider;
         }
 
+        public string GetReply(IDialogContext context, string key, params object[] args)
+        {
+            return string.Format(GetReply(context, key), args);
+        }
+
         public string GetReply(IDialogContext context, string key)
         {
             var replies = _provider.GetReplies(key);
