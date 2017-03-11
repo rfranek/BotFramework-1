@@ -83,7 +83,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialogs\AutoDeserializeDialog.cs" />
     <Compile Include="Dialogs\ExceptionHandlerDialog.cs" />
     <Compile Include="Dialogs\PromptTimeDialog.cs" />
     <Compile Include="Dialogs\SearchDialog.cs" />
