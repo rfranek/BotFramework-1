@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomaszkiewicz.BotFramework", "Tomaszkiewicz.BotFramework\Tomaszkiewicz.BotFramework.csproj", "{E96E7E93-21A0-4C8A-8203-800D32D35DE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomaszkiewicz.BotFramework.WebApi", "Tomaszkiewicz.BotFramework.WebApi\Tomaszkiewicz.BotFramework.WebApi.csproj", "{83BD2A6E-E917-48CE-AFC1-182B497CDA6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E96E7E93-21A0-4C8A-8203-800D32D35DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E96E7E93-21A0-4C8A-8203-800D32D35DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E96E7E93-21A0-4C8A-8203-800D32D35DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BD2A6E-E917-48CE-AFC1-182B497CDA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BD2A6E-E917-48CE-AFC1-182B497CDA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BD2A6E-E917-48CE-AFC1-182B497CDA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BD2A6E-E917-48CE-AFC1-182B497CDA6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
