@@ -38,23 +38,10 @@ namespace Tomaszkiewicz.BotFramework.Extensions
 
             reply.Attachments = new List<Attachment>();
 
-            var heroCard = new HeroCard()
-            {
-                Text = text,
-                Buttons = new List<CardAction>()
-            };
+            var heroCard = new HeroCard(text: text, buttons: new List<CardAction>());
 
             foreach (var replyItem in replies)
-            {
-                var button = new CardAction()
-                {
-                    Type = "imBack",
-                    Value = replyItem.Key,
-                    Title = replyItem.Value
-                };
-
-                heroCard.Buttons.Add(button);
-            }
+                heroCard.Buttons.Add(new CardAction("imBack", replyItem.Value, null, replyItem.Key));
 
             reply.Attachments.Add(heroCard.ToAttachment());
 
