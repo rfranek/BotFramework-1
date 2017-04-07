@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Tomaszkiewicz.BotFramework")]
 [assembly: AssemblyDescription("Useful extensions, dialogs and other stuff for MS Bot Framework")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Łukasz Tomaszkiewicz")]
 [assembly: AssemblyProduct("Tomaszkiewicz.BotFramework")]
 [assembly: AssemblyCopyright("Copyright ©  2017 Łukasz Tomaszkiewicz")]
 [assembly: AssemblyTrademark("")]

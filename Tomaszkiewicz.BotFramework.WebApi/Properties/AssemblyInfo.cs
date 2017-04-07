@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Tomaszkiewicz.BotFramework.WebApi")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Useful extensions for MS Bot Framework applications using Web API ")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Łukasz Tomaszkiewicz")]
 [assembly: AssemblyProduct("Tomaszkiewicz.BotFramework.WebApi")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Łukasz Tomaszkiewicz")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
