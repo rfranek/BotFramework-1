@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
@@ -34,6 +35,9 @@ namespace Tomaszkiewicz.BotFramework.Extensions
 
         public static IMessageActivity MakeQuickReplies(this IDialogContext context, Dictionary<string, string> replies, string text = null)
         {
+            if (context.Activity.ChannelId == "facebook")
+                return MakeQuickRepliesFacebook(context, replies, text);
+
             var reply = context.MakeMessage();
 
             reply.Attachments = new List<Attachment>();
@@ -44,6 +48,28 @@ namespace Tomaszkiewicz.BotFramework.Extensions
                 heroCard.Buttons.Add(new CardAction("imBack", replyItem.Value, null, replyItem.Key));
 
             reply.Attachments.Add(heroCard.ToAttachment());
+
+            return reply;
+        }
+
+        private static IMessageActivity MakeQuickRepliesFacebook(IDialogContext context, Dictionary<string, string> replies, string text = null)
+        {
+            var reply = context.MakeMessage();
+
+            reply.Text = text;
+
+            var items = replies.Select(x => new
+            {
+                content_type = "text",
+                title = x,
+                payload = x
+            });
+
+            dynamic channelData = new ExpandoObject();
+
+            channelData["quick_replies"] = items;
+
+            reply.ChannelData = channelData;
 
             return reply;
         }
