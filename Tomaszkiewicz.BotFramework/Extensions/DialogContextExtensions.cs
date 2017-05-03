@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using Newtonsoft.Json.Linq;
 
 namespace Tomaszkiewicz.BotFramework.Extensions
 {
@@ -28,12 +30,12 @@ namespace Tomaszkiewicz.BotFramework.Extensions
             return reply;
         }
 
-        public static IMessageActivity MakeQuickReplies(this IDialogContext context, IEnumerable<string> replies, string text = null)
+        public static IMessageActivity MakeQuickReplies(this IDialogContext context, IEnumerable<string> replies, string text)
         {
             return context.MakeQuickReplies(replies.ToDictionary(x => x, y => y), text);
         }
 
-        public static IMessageActivity MakeQuickReplies(this IDialogContext context, Dictionary<string, string> replies, string text = null)
+        public static IMessageActivity MakeQuickReplies(this IDialogContext context, Dictionary<string, string> replies, string text)
         {
             if (context.Activity.ChannelId == "facebook")
                 return MakeQuickRepliesFacebook(context, replies, text);
@@ -52,7 +54,7 @@ namespace Tomaszkiewicz.BotFramework.Extensions
             return reply;
         }
 
-        private static IMessageActivity MakeQuickRepliesFacebook(IDialogContext context, Dictionary<string, string> replies, string text = null)
+        private static IMessageActivity MakeQuickRepliesFacebook(IDialogContext context, Dictionary<string, string> replies, string text)
         {
             var reply = context.MakeMessage();
 
@@ -61,15 +63,14 @@ namespace Tomaszkiewicz.BotFramework.Extensions
             var items = replies.Select(x => new
             {
                 content_type = "text",
-                title = x,
-                payload = x
+                title = x.Value,
+                payload = x.Key
             });
 
-            dynamic channelData = new ExpandoObject();
-
-            channelData["quick_replies"] = items;
-
-            reply.ChannelData = channelData;
+            reply.ChannelData = JObject.FromObject(new
+            {
+                quick_replies = items
+            });
 
             return reply;
         }
