@@ -91,6 +91,7 @@
     <Compile Include="Dialogs\ExceptionHandlerDialog.cs" />
     <Compile Include="Dialogs\PromptTimeDialog.cs" />
     <Compile Include="Dialogs\SearchDialog.cs" />
+    <Compile Include="Dialogs\YesNoDialog.cs" />
     <Compile Include="Extensions\ActivityExtensions.cs" />
     <Compile Include="Extensions\ConversationUpdateActivityExtensions.cs" />
     <Compile Include="Extensions\DialogContextExtensions.cs" />
