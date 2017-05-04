@@ -95,6 +95,7 @@
     <Compile Include="Extensions\ActivityExtensions.cs" />
     <Compile Include="Extensions\ConversationUpdateActivityExtensions.cs" />
     <Compile Include="Extensions\DialogContextExtensions.cs" />
+    <Compile Include="Tools\QuickReplies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\InMemoryRepliesProvider.cs" />
     <Compile Include="Tools\IRepliesProvider.cs" />
